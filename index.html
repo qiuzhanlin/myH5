@@ -1,57 +1,110 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="zh">
 
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>w3school</title>
-    <link rel="icon " href="./logo-96-red.png ">
+    <title>钟表</title>
     <style>
         * {
             padding: 0;
             margin: 0;
         }
         
-        .nav {
-            margin: 10px auto;
-            width: 1210px;
-            height: 48px;
-            background-color: #e8e7e3;
-            display: flex;
+        .clock {
+            width: 500px;
+            height: 500px;
+            /* background-color: #bfa; */
+            margin: 100px auto;
+            border-radius: 50%;
+            border: 5px solid black;
+            position: relative;
         }
         
-        li {
-            list-style: none;
-            flex-grow: 1;
-            line-height: 48px;
-            text-align: center;
+        .clock>div {
+            position: absolute;
+            left: 0;
+            right: 0;
+            top: 0;
+            bottom: 0;
+            margin: auto;
         }
         
-        li a {
-            text-decoration: none;
-            display: block;
-            color: #777777;
-            font-size: 16px;
+        .clockwise-wrapper {
+            height: 60%;
+            width: 60%;
+            /* background-color: #bfa; */
+            animation: run 216000s steps(12) linear infinite;
         }
         
-        li:hover a {
-            background-color: #3f3f3f;
-            color: #e1e0dc
+        .clockwise {
+            height: 50%;
+            width: 4px;
+            background-color: black;
+            margin: 0 auto;
+        }
+        
+        .minute-wrapper {
+            height: 80%;
+            height: 80%;
+            /* background-color: #bfa; */
+            animation: run 3600s steps(60) infinite;
+        }
+        
+        .minute {
+            height: 50%;
+            width: 3px;
+            background-color: black;
+            margin: 0 auto;
+        }
+        
+        .three-wrapper {
+            height: 95%;
+            width: 95%;
+            /* background-color: #bfa; */
+            animation: run 60s steps(60) infinite;
+        }
+        
+        .three {
+            height: 50%;
+            width: 2px;
+            background-color: red;
+            margin: 0 auto;
+        }
+        
+        @keyframes run {
+            from {
+                transform: rotate(0);
+            }
+            to {
+                transform: rotate(360deg);
+            }
         }
     </style>
+
 </head>
+<!-- 创建一个钟 -->
+<div class="clock">
+    <!-- 创建一个时针容器 -->
+    <div class="clockwise-wrapper">
+        <!-- 创建一个时针 -->
+        <div class="clockwise"></div>
+    </div>
+    <!-- 创建一个分针容器 -->
+    <div class="minute-wrapper">
+        <!-- 创建一个分针 -->
+        <div class="minute"></div>
+    </div>
+    <!--创建一个秒针容器 -->
+    <div class="three-wrapper">
+        <!-- 创建一个秒针 -->
+        <div class="three"></div>
+    </div>
+</div>
 
 <body>
-    <ul class="nav ">
-        <li><a href="# ">HTML/CSS</a></li>
-        <li><a href="# ">Browser Side</a></li>
-        <li><a href="# ">Server Side</a></li>
-        <li><a href="# ">Programming</a></li>
-        <li><a href="# ">XML</a></li>
-        <li><a href="# ">Web Building</a></li>
-        <li><a href="# ">Reference</a></li>
-    </ul>
+
 </body>
 
 </html>
